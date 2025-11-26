@@ -2,6 +2,10 @@
 [[Website](https://av.dfki.de/publications/object-centric-2d-gaussian-splatting-background-removal-and-occlusion-aware-pruning-for-compact-object-models/)] [[Publication](https://www.scitepress.org/PublishedPapers/2025/133055/)] [[Arxiv](https://arxiv.org/abs/2501.08174)]
 ## Preamble
 
+**Update Nov. 2025**<br>
+An extended version of our method with a multi-object pipeline and improved background loss was accepted by Lecture Notes in Computer Science (LNCS) and is scheduled to be published in February 2026. We are planning to publish the code and mask datasets used in that extended version publicly since the overall modifications are more significant. Once the code has been published (probably during February), we will add another update and link here.
+
+**Release Apr. 2025**<br>
 Unfortunately, we decided against publishing the code as the specific modifications made are not significant enough to justify hosting a separate repository.
 However, we are happy to provide implementation details to make it easier to reproduce our contributions.
 
@@ -69,6 +73,9 @@ Specifically, the last commit at the time of clone was on Aug 29, 2024. SHA: [19
     - Prune occluded Gaussians
 
 #### Tracking during Rasterization (CUDA)
+
+**Note: Modifications to the rasterizer require to update the installed submodule in the conda environment.<br>
+(E.g. pip uninstall diff-surfel-rasterization, followed by pip install ./submodules/diff-surfel-rasterization)**
 
 - Initialize tensor for tracking seen status (mirroring of 'radii' tracking for visibility from original 2DGS/3DGS)
     - File: ./submodules/diff-surfel-rasterization/rasterize_points.cu
